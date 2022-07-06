@@ -151,6 +151,7 @@ public class PlayerController : Singleton<PlayerController>
             if (raycastHit.collider.gameObject.layer == 10)
             {
                 movementType = MovementType.run;
+                swerveSpeed = 1.3f;
             }
             
         }

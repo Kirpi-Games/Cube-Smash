@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Akali.Common;
+using DG.Tweening;
 using UnityEngine;
 
 public class CameraController : Singleton<CameraController>
@@ -11,7 +12,8 @@ public class CameraController : Singleton<CameraController>
     public Vector3 lookatOffset,finalOffset; 
     public bool isFollow,isFinal; 
     public GameObject newTarget;
-        
+    private float offsetZ = -7;
+    
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -19,9 +21,14 @@ public class CameraController : Singleton<CameraController>
            
     }
         
-    public void Final()
+    public void IncreaseOffsetZ()
     {
-        offset = Vector3.Lerp(offset, finalOffset, 1f * Time.deltaTime);
+        DOTween.To(()=> offsetZ, x=> offsetZ = x, offsetZ-1, 0.7f);
+    }
+    
+    public void DecreaseOffsetZ()
+    {
+        DOTween.To(()=> offsetZ, x=> offsetZ = x, offsetZ+1, 0.7f);
     }
         
     public void CameraFollow()
@@ -30,6 +37,7 @@ public class CameraController : Singleton<CameraController>
         
         if (target != null)
         {
+            offset.z = offsetZ;
             Vector3 desiredPosition = new Vector3(target.transform.position.x,target.transform.position.y,target.transform.position.z) + offset;
             Vector3 smoothed = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
             transform.position = smoothed;
@@ -51,11 +59,6 @@ public class CameraController : Singleton<CameraController>
         if (isFollow)
         {
             CameraFollow();
-        }
-    
-        if (isFinal)
-        {
-            Final();
         }
     }
 }

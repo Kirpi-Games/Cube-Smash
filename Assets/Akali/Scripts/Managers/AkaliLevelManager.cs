@@ -2,6 +2,7 @@ using System;
 using Akali.Common;
 using Akali.Scripts.Managers.StateMachine;
 using Akali.Scripts.ScriptableObjects;
+using Akali.Ui_Materials.Scripts.Components;
 using PlayerPrefs = Akali.Scripts.Utilities.PlayerPrefs;
 
 namespace Akali.Scripts.Managers
@@ -27,6 +28,7 @@ namespace Akali.Scripts.Managers
         {
             Taptic.Success();
             GameStateManager.Instance.SetGameState(GameStateManager.Instance.GameStateComplete);
+            MoneyText.Instance.IncreaseMoney(250);
             //TinySauce.OnGameFinished(true, PlayerPrefs.GetMoney(), PlayerPrefs.GetLevelText().ToString());
         }
 

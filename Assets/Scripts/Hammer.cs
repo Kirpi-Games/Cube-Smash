@@ -26,6 +26,7 @@ public class Hammer : MonoBehaviour
     {
         if (canTarget)
         {
+            GetComponent<BoxCollider>().enabled = true;
             transform.SetParent(null);
             transform.DOMove(target.position, hammerSpeed).SetEase(Ease.Linear).OnComplete((() => HammerBackParent()));
         }
@@ -48,7 +49,7 @@ public class Hammer : MonoBehaviour
                 {
                     transform.localPosition = Vector3.zero;
                     transform.DOLocalRotate(Vector3.zero, 0.2f);
-                    GetComponent<BoxCollider>().enabled = true;
+                    GetComponent<BoxCollider>().enabled = false;
                 }    
             }
                 
@@ -60,6 +61,7 @@ public class Hammer : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
+            Taptic.Heavy();
             GetComponent<BoxCollider>().enabled = false;
             other.transform.parent.DOMove(other.transform.parent.position + new Vector3(0,-2f,0), 0.1f).SetEase(Ease.Linear);
             isThrow = false;
@@ -68,6 +70,8 @@ public class Hammer : MonoBehaviour
             Debug.Log("wow");
             var cubeParticle = AkaliPoolManager.Instance.Dequeue<CubeBlast>();
             cubeParticle.transform.position = other.gameObject.transform.position;
+            cubeParticle.GetComponent<CubeBlast>().DestroyCube();
+            AudioManager.instance.Play("HammerHit");
         }
 
         if (other.gameObject.layer == 13)

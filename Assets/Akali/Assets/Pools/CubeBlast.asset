@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c105727f52fe4423990cfa70e740013, type: 3}
   m_Name: CubeBlast
   m_EditorClassIdentifier: 
-  poolPrefab: {fileID: 1033258529807020934, guid: dc85b4587ef09b64abee6b5e333a5e6a, type: 3}
+  poolPrefab: {fileID: 7762705853032391868, guid: 1fa64ef896e3c044796b41f1d6243ebe, type: 3}
   poolCount: 1000

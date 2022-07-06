@@ -39,7 +39,9 @@ public class RoadMaker : MonoBehaviour
 
         if (other.gameObject.layer == 3)
         {
-            if (index < targetRoad.Count)
+            other.transform.DOMoveX(0, 0.2f);
+            other.GetComponent<PlayerController>().swerveSpeed = 0;
+            if (index < targetRoad.Count-1)
             {
                 AkaliLevelManager.Instance.LevelIsFail();
                 other.GetComponent<Animator>().SetTrigger("Cry");
