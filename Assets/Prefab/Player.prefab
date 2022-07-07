@@ -998,11 +998,11 @@ MonoBehaviour:
   hammer: {fileID: 4975049028503232325}
   rayOffset: {x: 0, y: 1.5, z: 0.7}
   rayOffsetClimb: {x: 0, y: 0.5, z: 0.2}
-  rayLenght: 30
+  rayLenght: 35
   rayLenghtClimb: 0.5
-  swerveSpeed: 1.3
+  swerveSpeed: 1.5
   swerveClamp: 3
-  moveSpeed: 4
+  moveSpeed: 4.5
 --- !u!114 &1272895028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,7 +1476,7 @@ PrefabInstance:
       objectReference: {fileID: 6150388312078739185}
     - target: {fileID: 4428793555414577112, guid: 858993345f66c87479788471fa01a3ff, type: 3}
       propertyPath: hammerSpeed
-      value: 0.3
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4428793555414577112, guid: 858993345f66c87479788471fa01a3ff, type: 3}
       propertyPath: hammerParent
@@ -1484,7 +1484,7 @@ PrefabInstance:
       objectReference: {fileID: 6771873953258888348}
     - target: {fileID: 4428793555414577112, guid: 858993345f66c87479788471fa01a3ff, type: 3}
       propertyPath: hammerBackSpeed
-      value: 35
+      value: 55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 858993345f66c87479788471fa01a3ff, type: 3}

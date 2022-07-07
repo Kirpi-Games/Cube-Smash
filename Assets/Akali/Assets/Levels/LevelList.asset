@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list:
   - {fileID: 11400000, guid: eebd290d2eab44429afca86baa34f766, type: 2}
+  - {fileID: 11400000, guid: 149d15e3fd474ac478228e96a3f46ffe, type: 2}
+  - {fileID: 11400000, guid: bd9752c79217f6b4199c081c363bfa4a, type: 2}
+  - {fileID: 11400000, guid: 70f02a94ce1444c42a45c22b60c80e8e, type: 2}
+  - {fileID: 11400000, guid: c7f292fa7d231e44eb5b05be7ed18859, type: 2}
   repeatingLevel: 1
