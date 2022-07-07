@@ -10,7 +10,7 @@ public class CubeBlast : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).transform.DOScale(0, 0.8f);
+            transform.GetChild(i).transform.DOScale(0.01f, 0.6f);
             Destroy(this.gameObject,0.8f);            
         }
     }

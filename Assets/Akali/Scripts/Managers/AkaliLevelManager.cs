@@ -27,8 +27,8 @@ namespace Akali.Scripts.Managers
         public void LevelIsCompleted()
         {
             Taptic.Success();
-            GameStateManager.Instance.SetGameState(GameStateManager.Instance.GameStateComplete);
             MoneyText.Instance.IncreaseMoney(250);
+            GameStateManager.Instance.SetGameState(GameStateManager.Instance.GameStateComplete);
             //TinySauce.OnGameFinished(true, PlayerPrefs.GetMoney(), PlayerPrefs.GetLevelText().ToString());
         }
 
