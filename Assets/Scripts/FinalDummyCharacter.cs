@@ -11,7 +11,12 @@ public class FinalDummyCharacter : MonoBehaviour
         float z = Random.Range(70,170);
         Vector3 direction = new Vector3(0, 0, z);
         transform.DOJump(transform.position + direction, 7, 2, 3).OnComplete((() => AkaliLevelManager.Instance.LevelIsCompleted()));
-        CameraController.Instance.target = this.gameObject;
+        Invoke(nameof(SetCamera), .2f);
         GetComponent<Animator>().SetBool("isDead",true);
+    }
+
+    private void SetCamera()
+    {
+        CameraController.Instance.target = gameObject;
     }
 }

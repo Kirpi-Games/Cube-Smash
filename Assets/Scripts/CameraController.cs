@@ -39,7 +39,7 @@ public class CameraController : Singleton<CameraController>
         {
             offset.z = offsetZ;
             Vector3 desiredPosition = new Vector3(target.transform.position.x,target.transform.position.y,target.transform.position.z) + offset;
-            Vector3 smoothed = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            Vector3 smoothed = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
             transform.position = smoothed;
             transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z);
             Vector3 lookAtTarget = new Vector3(target.transform.position.x,0,target.transform.position.z) + lookatOffset;
